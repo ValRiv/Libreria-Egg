@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <!-- Head -->    
+    <head th:replace="/fragments/head :: head"></head>
+    <!-- Navigation -->
+    <nav th:replace="/fragments/navbar :: nav"></nav>
+
+    <header th:replace="/fragments/headergenerico :: header"></header>
+
+
+    <body>
+        <!-- Header -->
+
+
+        <br>
+
+            <button type="button" class="btn btn-dark"><h4 class="display-5" th:text="${titulo}"></h4>
+                    <p th:text="${descripcion}"></p></button>
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </section>
+
+            <br>
+                <br>
+                    <!-- Footer -->
+                    <footer class="py-5 bg-black">
+                        <div class="container">
+                            <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2021</p>
+                        </div>
+                        <!-- /.container -->
+                    </footer>
+
+                    <!-- Bootstrap core JavaScript -->
+
+<script th:replace="/fragments/boostjs :: script"></script>
+                    </body>
+
+                    </html>

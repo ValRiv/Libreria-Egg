@@ -1,0 +1,8 @@
+form {
+    text-align: center;
+    background-color: rgb(241, 235, 240);
+    padding: 50px;
+    
+    margin: auto;
+    display: table;
+  }

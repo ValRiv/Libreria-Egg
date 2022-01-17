@@ -1,0 +1,91 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Libro</title>
+    <link rel="stylesheet" href="/stylelibro.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Libreria WEB Vale</a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/}">Menú Principal</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/libro/lista}">Menú Libros</a>
+        </li>
+      </nav>
+    
+     
+      
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Año</th>
+            <th scope="col">Ejemplares</th>
+            <th scope="col">Ejemplares Prestados</th>
+                   
+          </tr>
+        </thead>
+        <tbody th:each="libro : ${libro}">
+          <tr>
+            <th scope="row" th:text="${libro.id}"></th>
+		    <td th:text="${libro.isbn}"></td>
+		    <td th:text="${libro.titulo}"></td>
+                    <td th:text="${libro.anio}"></td>
+		    <td th:text="${libro.ejemplares}"></td>
+                    <td th:text="${libro.ejemplaresPrestados}"></td>
+                    <td th:text="${libro.ejemplaresRestantes}"></td>
+	
+          </tr>
+         
+        </tbody>
+      </table>
+      <form th:action="@{/libro/confirmarModificacion/__${libro.id}__}" method="POST">
+       <div class="form-groconfirmarModificacion/__${libro.id}__}" method="POST">up">     
+            <p>Modificar  Libro</p>
+          <label>ISBN</label>
+          <input type="number" class="form-control" name="isbn" placeholder="ISBN">
+          
+        
+        <div class="form-group">
+            <label>Titulo del libro</label>
+            <input type="text" class="form-control" name="titulo" placeholder="Titulo del libro">
+            
+          </div>
+          <div class="form-group">
+            <label>Año </label>
+            <input type="number" class="form-control" name="anio" placeholder="Año">
+            
+          </div>
+          <div class="form-group">
+            <label>Numero de Ejemplares </label>
+            <input type="number" class="form-control" name="ejemplares" placeholder="Ejemplares">
+            
+          </div>
+          <div class="form-group">
+            <label>Ejemplares Prestados</label>
+            <input type="number" class="form-control" name="ejemplaresPrestados" placeholder="Ejemplares Prestados">
+
+          </div>
+          
+          
+          <div class="form-group">
+        
+        <button type="submit" class="btn btn-success">Modificar</button>
+      </form>
+      
+</body>
+</html>

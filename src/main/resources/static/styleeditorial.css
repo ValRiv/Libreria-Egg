@@ -1,0 +1,13 @@
+form {
+    background-color: rgb(241, 246, 247);
+    padding: 50px;
+    text-align: left;
+    margin: auto;
+    display: table;
+}
+body {
+    
+    background-image: url("libreria2.jpg");
+    /*background-size: 90rem;*/
+    
+  }
